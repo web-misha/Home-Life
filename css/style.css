@@ -415,10 +415,18 @@ h2 {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("../img/main_bg.jpg");
+  background-image: url(../img/main_bg_hd.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.header_fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 3000;
+  top: 0;
+  left: 0;
 }
 
 .header_header {
@@ -488,7 +496,6 @@ h2 {
 }
 
 .header_data_block_gpstext {
-  font-size: calc( 12px + 4 * ((100vw - 320px) / 2240));
   position: relative;
 }
 
@@ -497,6 +504,10 @@ h2 {
   position: absolute;
   top: -2px;
   left: -30px;
+}
+
+.header_data_block_gpstext a {
+  font-size: calc( 12px + 4 * ((100vw - 320px) / 2240));
 }
 
 .header_burger {
@@ -519,8 +530,7 @@ h2 {
 
 .header_navigation ul li {
   position: relative;
-  margin-top: calc( 8px + 4 * ((100vw - 320px) / 2240));
-  margin-bottom: calc( 8px + 4 * ((100vw - 320px) / 2240));
+  margin: 12px 0;
 }
 
 .header_navigation ul li a {
@@ -573,7 +583,7 @@ h2 {
 }
 
 .header_main {
-  margin-top: calc( 30px + 220 * ((100vw - 320px) / 2240));
+  padding-top: calc( 140px + 220 * ((100vw - 320px) / 2240));
   margin-bottom: calc( 12px + 17 * ((100vw - 320px) / 2240));
 }
 
@@ -623,7 +633,7 @@ h2 {
 }
 
 .header_bottom {
-  margin-top: calc( 25px + 325 * ((100vw - 320px) / 2240));
+  margin-top: calc( 25px + 175 * ((100vw - 320px) / 2240));
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -661,6 +671,12 @@ h2 {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+@supports ((-webkit-backdrop-filter: blur(50px)) or (backdrop-filter: blur(50px))) {
+  .header_bottom_block {
+    background: rgba(3, 22, 0, 0.55);
+  }
 }
 
 .page_block {
@@ -787,7 +803,7 @@ h2 {
   display: block;
   padding-top: 22px;
   padding-bottom: 17px;
-  border-bottom: 1px solid #d75a37;
+  border-bottom: 2px solid #d75a37;
 }
 
 .services_text:last-child {
@@ -922,10 +938,10 @@ h2 {
   content: url(../img/form_img.png);
   position: absolute;
   top: 0;
-  right: 33%;
-  -webkit-transform: translateX(33%);
-      -ms-transform: translateX(33%);
-          transform: translateX(33%);
+  right: 31%;
+  -webkit-transform: translateX(31%);
+      -ms-transform: translateX(31%);
+          transform: translateX(31%);
 }
 
 .page_block_form {
@@ -973,7 +989,7 @@ h2 {
 
 .footer {
   width: 100%;
-  background-color: #111B11;
+  background-color: #111b11;
   padding-top: calc( 20px + 14 * ((100vw - 320px) / 2240));
   padding-bottom: calc( 20px + 14 * ((100vw - 320px) / 2240));
 }
@@ -1052,7 +1068,12 @@ h2 {
 
 .footer_block_geo,
 .footer_block_metro {
+  font-size: calc( 12px + 2 * ((100vw - 320px) / 2240));
   font-family: "ProximaR";
+}
+
+.footer_block_geo a,
+.footer_block_metro a {
   font-size: calc( 12px + 2 * ((100vw - 320px) / 2240));
 }
 
@@ -1075,7 +1096,7 @@ h2 {
 }
 
 .service_header_main {
-  margin-top: calc( 20px + 44 * ((100vw - 320px) / 2240));
+  padding-top: calc( 130px + 44 * ((100vw - 320px) / 2240));
   margin-bottom: 0;
 }
 
@@ -1195,7 +1216,7 @@ h2 {
 }
 
 .promotions_header_main {
-  margin-top: calc( 40px + 60 * ((100vw - 320px) / 2240));
+  padding-top: calc( 150px + 60 * ((100vw - 320px) / 2240));
   margin-bottom: 0;
 }
 
@@ -1401,7 +1422,7 @@ h2 {
 
 .contacts_geo {
   font-size: 14px;
-  font-family: "ProximaR";
+  font-family: "ProximaB";
   color: #5c5c5c;
 }
 
@@ -1410,6 +1431,10 @@ h2 {
   position: absolute;
   top: -3px;
   left: 0;
+}
+
+.contacts_link {
+  margin-top: 30px;
 }
 
 .contacts_link::before {
@@ -1546,11 +1571,11 @@ h2 {
 
 @media (max-width: 772px) {
   .service_header {
-    height: 50vh;
+    height: 60vh;
   }
 
   .promotions_header {
-    height: 30vh;
+    height: 35vh;
   }
 }
 
@@ -1613,12 +1638,12 @@ h2 {
     position: fixed;
     overflow: auto;
     top: 0;
-    left: -100%;
+    right: -100%;
     width: 100%;
     height: 100%;
     background-color: white;
     z-index: 1000;
-    padding-top: 110px;
+    padding-top: 120px;
     padding-left: 20px;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -1629,16 +1654,28 @@ h2 {
     display: block;
   }
 
-  .header_navigation li a {
-    color: black;
+  .header_navigation ul li a {
+    color: #4f4f4f;
+    font-size: 22px;
+  }
+
+  .header_navigation ul li a.header_navigation_link {
+    color: #d75a37;
   }
 
   .header_navigation.active {
-    left: 0;
+    right: 0;
   }
 
   .header_navigation_tel {
-    padding-left: 35px;
+    display: inline-block;
+    padding: 20px 0 20px 35px;
+    border-top: 1px solid #b7b7b7;
+    border-bottom: 1px solid #b7b7b7;
+  }
+
+  .header_navigation_link::before {
+    content: url(../img/phone-oranege_svg.svg);
   }
 
   .header_navigation_menu ul {
@@ -1647,15 +1684,11 @@ h2 {
     display: block;
     padding: 0;
     margin-left: 30px;
-    width: 150px;
+    width: 250px;
   }
 
   .header_navigation_menu_link img {
     display: none;
-  }
-
-  .header_navigation_link::before {
-    content: url(../img/phone-black_svg.svg);
   }
 
   .header_burger_block {
@@ -1717,19 +1750,14 @@ h2 {
     transition: all 0.3s;
   }
 
-  #header_burger.scrolled {
-    background-color: #3ca53c;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-
-  #header_burger.scrolled::before {
-    content: url(../img/logo_burger.svg);
-  }
+  /*#header_burger.scrolled {
+    background-color: $color_bg;
+    justify-content: space-between;
+    align-items: center;
+    &::before {
+      content: url(../img/logo_burger.svg);
+    }
+  }*/
 
   .header_burger.active::before {
     -webkit-transform: rotate(45deg);
@@ -1870,7 +1898,7 @@ h2 {
 
 @media (max-width: 540px) {
   .service_header {
-    height: 55vh;
+    height: 70vh;
   }
 }
 
@@ -1904,7 +1932,7 @@ h2 {
 
 @media (max-width: 376px) {
   .service_header {
-    height: 60vh;
+    height: 72vh;
   }
 }
 
@@ -1920,11 +1948,11 @@ h2 {
   }
 
   .service_header {
-    height: 70vh;
+    height: 90vh;
   }
 }
 
-.webp .header{ background-image: url(../img/main_bg.webp); }
+.webp .header{ background-image: url(../img/main_bg_hd.webp); }
 
 .webp .service_header{ background-image: url(../img/service_bg.webp); }
 

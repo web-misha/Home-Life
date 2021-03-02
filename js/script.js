@@ -24,17 +24,7 @@ $(document).ready(function () {
     $(this).next(".acordion_item_content").slideToggle();
   });
 });
-$(document).ready(function() {
-  $(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
 
-    if (scroll >= 110) {
-      $("#header_burger").addClass("scrolled");
-    } else {
-      $("#header_burger").removeClass("scrolled");
-    }
-  });
-});
 new Swiper(".swiper-container", {
   navigation: {
     nextEl: ".swiper_button_next",
@@ -50,7 +40,7 @@ new Swiper(".swiper-container", {
 });
 
 
-
+/*
 jQuery(function($) {
   function fixDiv() {
     var $cache = $('#header_nav');
@@ -67,3 +57,14 @@ jQuery(function($) {
   $(window).scroll(fixDiv);
   fixDiv();
 });
+$(document).ready(function() {
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 110) {
+      $("#header_burger").addClass("scrolled");
+    } else {
+      $("#header_burger").removeClass("scrolled");
+    }
+  });
+});*/
